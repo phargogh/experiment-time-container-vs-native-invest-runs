@@ -6,9 +6,8 @@ module load physics gdal py-gdal-utils
 python3 -m venv invest-env --system-site-packages
 source invest-env/bin/activate
 
+# Verify we're within the activated environment and use the activated python/pip.
 which python
-which pip
-
-pip install natcap.invest
+python -m pip install natcap.invest
 
 
