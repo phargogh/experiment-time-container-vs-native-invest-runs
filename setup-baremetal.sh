@@ -9,6 +9,6 @@ source invest-env/bin/activate
 # Verify we're within the activated environment and use the activated python/pip.
 which python
 python -m pip install --upgrade pip
-python -m pip install natcap.invest --upgrade-strategy=only-if-needed
+python -m pip install natcap.invest gdal==3.10.2
 
 
