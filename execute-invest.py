@@ -5,6 +5,7 @@
 
 import logging
 import os
+import pprint
 import sys
 
 import natcap.invest.sdr.sdr
@@ -23,6 +24,7 @@ formatter = logging.Formatter(
 handler.setFormatter(formatter)
 logging.basicConfig(level=logging.INFO, handlers=[handler])
 
+SCRATCH = os.environ['SCRATCH']
 L_SCRATCH = os.environ['L_SCRATCH']  # /lscratch/<username>
 OAK = os.environ['OAK']  # /oak/stanford/groups/gdaily
 
@@ -40,10 +42,11 @@ args = {
     'sdr_max': '0.8',
     'threshold_flow_accumulation': '1000',
     'watersheds_path': f'{OAK}/JesseGoldstein/Colombia3Ps/Col_watersheds_32718.shp',
-    'workspace_dir': f'{L_SCRATCH}/SDR_results',
+    'workspace_dir': f'{SCRATCH}/SDR_results-{sys.argv[1]}',
     'n_workers': 4,
 	'flow_dir_algorithm': 'MFD',
 }
+LOGGER.info(pprint.pformat(args))
 
 if __name__ == '__main__':
     natcap.invest.sdr.sdr.execute(args)
