@@ -10,3 +10,25 @@ For the bare-metal install, I will create a new virtual environment that contain
 I will use Sherlock's precompiled packages from their software list.
 
 For the container, I'll probably just use `natcap/devstack`.
+
+## Experimental process
+
+First, you would clone this repository on to Sherlock.
+
+Second, you will need to prep the environment for both the baremetal and
+container environments.  The scripts `setup-baremetal.sh` and
+`setup-container.sh` are for this purpose.  Run both to set them up.  On
+Sherlock, I recommend executing these as jobs, such as with the interactive
+`sh_dev` command.
+
+Finally, queue up the jobs to be executed.  The script `./submit.sh` will do this.
+
+## Results
+
+### 2025-07-02
+
+I executed both jobs, and it turned out that they both ended up executing on
+the same computer, `sh04-07n23` in the `serc` partition.  Since both jobs are
+executing at the same time, this is probably good for avoiding potential
+differences in CPU architectures across different machines, but it also means
+that they will be competing for resources like network bandwidth.
