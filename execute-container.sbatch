@@ -7,7 +7,7 @@
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=jdouglass@stanford.edu
 #SBATCH --partition=serc,hns,normal
-#SBATCH --job-name="InVEST SDR - Singularity/Conda"
+#SBATCH --job-name="InVEST SDR - Singularity and Conda"
 #SBATCH --output=/scratch/users/jadoug06/slurm-logfiles/slurm-%j.%x.out
 
 set -ex
