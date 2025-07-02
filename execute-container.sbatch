@@ -12,4 +12,4 @@
 
 set -ex
 
-singularity run "docker://ghcr.io/natcap/devstack:2025-07-01" execute-invest.py
+singularity run "docker://ghcr.io/natcap/devstack:2025-07-01" python execute-invest.py

@@ -12,6 +12,8 @@
 
 set -ex
 
+module load python/3.9.0
+module load physics gdal/3.10.2
 source invest-env/bin/activate
 
 which python
