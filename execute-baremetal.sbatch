@@ -18,6 +18,6 @@ source invest-env/bin/activate
 
 which python
 
-python execute-invest.py "baremetal"
+GDAL_CACHEMAX=2048 python execute-invest.py "baremetal"
 
 
