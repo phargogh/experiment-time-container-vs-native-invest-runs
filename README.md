@@ -25,6 +25,15 @@ Finally, queue up the jobs to be executed.  The script `./submit.sh` will do thi
 
 ## Results
 
+### 2025-07-03
+
+Of the two jobs submitted on 2025-07-02, the baremetal job timed out (due to an
+out-of-memory event killing a task process, leading to a graph deadlock that
+stalled the whole graph) and the container job finished in 7:39:28.  I am
+now setting the `GDAL_CACHEMAX=2048` environment variable in both programs and
+restarting the jobs.  In case they are running on different CPUs, I am also
+going to echo the hostname and `cat /proc/cpuinfo` to the logs.
+
 ### 2025-07-02
 
 I executed both jobs, and it turned out that they both ended up executing on

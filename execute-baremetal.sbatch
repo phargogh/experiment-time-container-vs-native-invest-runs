@@ -18,6 +18,10 @@ source invest-env/bin/activate
 
 which python
 
+# For comparing CPU speeds, if needed.
+hostname
+cat /proc/cpuinfo
+
 GDAL_CACHEMAX=2048 python execute-invest.py "baremetal"
 
 
