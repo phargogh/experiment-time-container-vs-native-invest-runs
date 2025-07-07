@@ -25,6 +25,18 @@ Finally, queue up the jobs to be executed.  The script `./submit.sh` will do thi
 
 ## Results
 
+### 2025-07-07
+
+For the two jobs submitted on 2025-07-07, we had the same results, where the
+baremetal job timed out due to an OOM event and the container job finished
+quickly.  In this case, the container job finished in 14s, probably because
+taskgraph determined there were no changes to the input data, so nothing
+needed to reexecute.
+
+In case the issue here is with copying of environment variables down to the
+spawned processes (since we are using spawn and not fork), I'm going to set
+n_workers down to `-1` and re-queue the jobs.
+
 ### 2025-07-03
 
 Of the two jobs submitted on 2025-07-02, the baremetal job timed out (due to an

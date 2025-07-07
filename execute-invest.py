@@ -43,8 +43,8 @@ args = {
     'threshold_flow_accumulation': '1000',
     'watersheds_path': f'{OAK}/users/JesseGoldstein/Colombia3Ps/Col_watersheds_32718.shp',
     'workspace_dir': f'{SCRATCH}/SDR_results-{sys.argv[1]}',
-    'n_workers': 4,
-	'flow_dir_algorithm': 'MFD',
+    'n_workers': -1,
+    'flow_dir_algorithm': 'MFD',
 }
 LOGGER.info(pprint.pformat(args))
 
