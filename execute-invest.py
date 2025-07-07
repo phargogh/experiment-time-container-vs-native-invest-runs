@@ -12,7 +12,9 @@ import natcap.invest.sdr.sdr
 import natcap.invest.utils
 from osgeo import gdal
 
-gdal.SetCacheMax(2048)  # 2048 MB
+# gdal.SetCacheMax(2048)  # 2048 MB
+gdal.SetCacheMax(128)  # 128 MB
+print(f"CACHEMAX: {gdal.GetCacheMax()}")
 
 LOGGER = logging.getLogger(__name__)
 root_logger = logging.getLogger()

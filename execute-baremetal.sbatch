@@ -2,7 +2,7 @@
 #
 #SBATCH --time=10:00:00
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4
+#SBATCH --cpus-per-task=2
 #SBATCH --mem-per-cpu=8G
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=jdouglass@stanford.edu
@@ -22,6 +22,8 @@ which python
 hostname
 cat /proc/cpuinfo
 
-GDAL_CACHEMAX=2048 python execute-invest.py "baremetal"
+export GDAL_CACHEMAX=129
+
+python execute-invest.py "baremetal"
 
 

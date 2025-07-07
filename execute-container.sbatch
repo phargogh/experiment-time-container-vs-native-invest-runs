@@ -16,4 +16,4 @@ set -ex
 hostname
 cat /proc/cpuinfo
 
-singularity run --env GDAL_CACHEMAX=2048 "docker://ghcr.io/natcap/devstack:2025-07-01" python execute-invest.py "container"
+singularity run --env GDAL_CACHEMAX=129 "docker://ghcr.io/natcap/devstack:2025-07-01" python execute-invest.py "container"
